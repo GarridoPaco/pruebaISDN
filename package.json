@@ -1,0 +1,25 @@
+{
+  "name": "prueba_sidn",
+  "version": "1.0.0",
+  "description": "Prueba Técnica para desarrollador Front End en SIDN",
+  "type": "module",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "SASS",
+    "GULP",
+    "NPM",
+    "Responsive",
+    "HTML",
+    "JavaScript"
+  ],
+  "author": "Francisco Garrido Arredondo",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.8"
+  }
+}
