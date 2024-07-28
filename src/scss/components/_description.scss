@@ -19,7 +19,7 @@
             z-index: -1;
             margin: 0;
             height: 10rem;
-            width: 300px;
+            width: 250px;
             background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255 , 255, 255, 1) 100%),
                         linear-gradient(45deg, c.$pink 12.5%, transparent 12.5%, transparent 50%, c.$pink 50%, c.$pink 62.5%, transparent 62.5%, transparent 100%);
             background-size: 100% 100%, 10px 10px;
@@ -32,28 +32,44 @@
             color: c.$darkBlue;
             margin: 0;
             padding: 1.5rem 2rem;
+            @include m.desktop {
+                padding-bottom: 0;
+            }
         }
 
         .container__description__header__headline {
-            font-size: 5rem;
-            font-style: normal;
-            color: c.$darkBlue;
-            margin-left: 2rem;
-            margin-bottom: 3rem;
-            @include m.desktop {
-                font-size: 12rem
-            }
+            position: relative;
 
-            .container__description__header__headline--emphasis {
+            .container__description__header__headline__title {
+                font-size: 5rem;
+                font-weight: 700;
+                font-style: normal;
+                color: c.$darkBlue;
+                margin-left: 2rem;
+                letter-spacing: .3rem;
+                @include m.desktop {
+                    font-size: 9rem;
+                }
+            }
+            .container__description__header__headline__subtitle {
                 @include m.emphasis(c.$pink);
+                top: 2.5rem;
+                font-size: 6rem;
+                left: 1.7rem;
+                @include m.desktop {
+                    top: 6rem;
+                    font-size: 9rem;
+                }
             }
         }
 
+
         .container__description__header__subheadline {
             text-align: center;
+            font-size: 1.8rem;
             color: c.$darkBlue;
             font-weight: 600;
-            margin: 7rem 0;
+            margin: 10rem 0 4rem 0;
             
         }
     }
@@ -78,6 +94,9 @@
                 color: c.$darkBlue;
                 font-size: 3rem;
                 margin: 1rem 2rem;
+                @include m.desktop {
+                    font-size: 4rem;
+                }
             }
         }
 

@@ -8,16 +8,18 @@
 
     background: linear-gradient(to bottom, c.$pink, c.$lightPink);
     padding: 5rem 2rem;
+    overflow: hidden;
     @include m.desktop {
         padding: 5rem 15rem;
     }
 
     .container__flavours__header__superheadline {
         font-size: 2.5rem;
-        margin: 2rem;
         font-weight: 600;
         color: c.$white;
         text-align: right;
+        margin: 0;
+        padding-top: 1.5rem;
     }
 
     .container__flavours__header {
@@ -26,29 +28,38 @@
         .container__flavours__header__bg {
             position: absolute;
             top: 0px;
-            right: 3px;
-            // z-index: -1;
+            right: -2rem;
             margin: 0;
             height: 10rem;
-            width: 60vw;
+            width: 250px;
             background: linear-gradient(to left, transparent 0%, transparent 100%),
-                linear-gradient(45deg, c.$white 12.5%, transparent 12.5%, transparent 50%, c.$white 50%, c.$white 62.5%, transparent 62.5%, transparent 100%);
+                linear-gradient(135deg, c.$white 12.5%, transparent 12.5%, transparent 50%, c.$white 50%, c.$white 62.5%, transparent 62.5%, transparent 100%);
             background-size: 100% 100%, 10px 10px;
+            mask-image: linear-gradient(to left, black 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to left, black 0%, transparent 100%);
         }
 
         .container__flavours__header__headline {
-            font-style: normal;
-            font-weight: 700;
-            font-size: 5rem;
-            color: c.$white;
-            margin: 2rem;
-            text-align: right;
-            @include m.desktop {
-                font-size: 10rem;
+            position: relative;
+
+            .container__flavours__header__headline__title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 5rem;
+                color: c.$white;
+                text-align: right;
+                @include m.desktop {
+                    font-size: 10rem;
+                }
             }
 
-            .container__flavours__header__headline--emphasis {
+            .container__flavours__header__headline__subtitle {
                 @include m.emphasis(c.$white);
+                @include m.desktop {
+                    font-size: 10rem;
+                }
+                right: 0px;
+                top: 3.5rem;
             }
         }
     }
@@ -60,7 +71,7 @@
         scroll-snap-type: x mandatory;
         overflow-x: scroll;
         overflow-y: hidden;
-        //scrollbar-width: none;
+        scrollbar-width: none;
         padding: 5rem 0;
 
         @include m.desktop {
@@ -77,6 +88,10 @@
 
             @include m.desktop {
                 height: fit-content;
+            }
+
+            &:nth-child(n+13) {
+                display: none;
             }
 
             .container__flavours__slider__card__header {

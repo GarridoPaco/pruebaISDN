@@ -46,15 +46,21 @@
 }
 
 @mixin emphasis ($color) {
+    position: absolute;
+    margin: 0;
+    font-size: 5rem;
+    font-weight: 800;
     display: block;
     color: transparent;
     -webkit-text-stroke: .5px $color;
-    line-height:0.2;
-    text-indent: 2rem;
+    text-indent: 3rem;
+    top: 2.5rem;
+
     z-index: 99;
     @include desktop() {
-        line-height: .1;
+        font-size: 12rem;
         text-indent: 5rem;
+        top: 6rem;
     }
 }
 

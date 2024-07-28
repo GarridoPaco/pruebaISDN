@@ -6,13 +6,13 @@
 
 .container__introduction {
     background-color: c.$darkBlue;
-    padding: 1rem;
+    padding: 5rem 2rem 1rem 2rem;
 
     @include m.desktop {
-        padding: 1rem 15rem;
+        padding: 5rem 15rem 1rem 15rem;
     }
 
-    .container__introduction__header {
+    .container__introduction__article {
         @include m.desktop {
             display: flex;
             flex-direction: row;
@@ -20,27 +20,35 @@
         }
 
         .container__introduction__info {
-            //flex: 1;
+            flex: 2;
         }
     }
 
     .container__introduction__headline {
-        color: c.$white;
-        margin-left: 2rem;
-        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
 
         @include m.desktop {
-            font-size: 12rem;
+            padding-bottom: 5rem;
         }
 
-        .container__introduction__headline--emphasis {
-            @include m.emphasis(c.$pink);
+        .container__introduction__headline__title {
+            color: c.$white;
+            //margin-left: 2rem;
+    
+            @include m.desktop {
+                font-size: 12rem;
+            }
         }
+        .container__introduction__headline__subtitle {
+            @include m.emphasis(c.$pink);
+            font-style: italic;
+        }
+    
     }
 
     .container__introduction__subheadline {
-        padding: 2rem;
-        padding-bottom: 5rem;
+        padding: 2rem 0 5rem 0;
         color: c.$white;
 
         @include m.desktop {
@@ -60,16 +68,17 @@
     .container__introduction__img {
         display: none;
 
+
         @include m.desktop {
-            display: block;
+            display: inline;
             width: 100%;
-            object-fit: cover;
+            max-width: 300px;
             height: auto;
         }
     }
 
     .container__introduction__footer {
-        margin-top: 10rem;
+        margin-top: 5rem;
 
         @include m.desktop {
             display: flex;
@@ -99,10 +108,10 @@
             font-weight: 100;
             font-size: 1.2rem;
             text-align: center;
-            margin: 1rem 3rem;
+            margin: 1rem 0rem;
 
             @include m.desktop {
-                width: 40%;
+                width: 32%;
                 text-align: right;
             }
         }
