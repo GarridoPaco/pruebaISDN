@@ -1,0 +1,81 @@
+@use 'variables' as v;
+@use 'colors' as c;
+
+
+@mixin button ($textColor) {
+    position: relative;
+    background-color: rgba($color: white, $alpha: .6);
+    padding: 2rem 6rem;
+    color: $textColor;
+    font-size: 2.5rem;
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    display: block;
+    margin: auto;
+    border-radius: .2rem;
+    &:hover {
+        background-color: rgba($color: white, $alpha: .8);
+        box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302),0 4px 8px 3px rgba(60,64,67,0.149);
+        cursor: pointer;
+    }
+
+    .button-overlay-top-line {
+        position: absolute;
+        left: -1.5rem;
+        top: 1rem;
+        width: 3rem;
+        height: .7rem;
+        background-color: rgba($color: white, $alpha: .6);
+        border-radius: .2rem;
+    }
+
+    .button-overlay-botton-line {
+        position: absolute;
+        right: -2.5rem;
+        width: 5rem;
+        height: .7rem;
+        background-color: rgba($color: white, $alpha: .6);
+        border-radius: .2rem;
+    }
+}
+
+@mixin emphasis ($color) {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: .5px $color;
+    line-height:0.2;
+    text-indent: 2rem;
+    z-index: 99;
+    @include desktop() {
+        line-height: .1;
+        text-indent: 5rem;
+    }
+}
+
+@mixin logo ($fontSize) {
+    font-style: italic;
+    font-weight: 500;
+    font-size: $fontSize;
+    color: c.$white;
+    margin:auto;
+    text-transform: uppercase;
+    transform: rotate(-7deg);
+}
+
+@mixin phone {
+    @media (min-width: v.$phone) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}

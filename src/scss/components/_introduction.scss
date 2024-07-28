@@ -1,0 +1,110 @@
+@use 'base/colors' as c;
+@use 'base/typography' as t;
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.container__introduction {
+    background-color: c.$darkBlue;
+    padding: 1rem;
+
+    @include m.desktop {
+        padding: 1rem 15rem;
+    }
+
+    .container__introduction__header {
+        @include m.desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .container__introduction__info {
+            //flex: 1;
+        }
+    }
+
+    .container__introduction__headline {
+        color: c.$white;
+        margin-left: 2rem;
+        margin-bottom: 3rem;
+
+        @include m.desktop {
+            font-size: 12rem;
+        }
+
+        .container__introduction__headline--emphasis {
+            @include m.emphasis(c.$pink);
+        }
+    }
+
+    .container__introduction__subheadline {
+        padding: 2rem;
+        padding-bottom: 5rem;
+        color: c.$white;
+
+        @include m.desktop {
+            width: 50%;
+            padding-left: 0
+        }
+    }
+
+    .container__introduction__btn {
+        @include m.button(c.$darkBlue);
+
+        @include m.desktop {
+            margin-left: 0;
+        }
+    }
+
+    .container__introduction__img {
+        display: none;
+
+        @include m.desktop {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            height: auto;
+        }
+    }
+
+    .container__introduction__footer {
+        margin-top: 10rem;
+
+        @include m.desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .icon-group-mouse-arrow {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .mouse-icon {
+                width: 4rem;
+            }
+
+            .arrow-down-icon {
+                margin-top: .3rem;
+                width: 1.8rem;
+            }
+
+        }
+
+        .container__introduction__note {
+            display: block;
+            color: white;
+            font-weight: 100;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 1rem 3rem;
+
+            @include m.desktop {
+                width: 40%;
+                text-align: right;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@use 'typography' as t;
+@use 'mixins' as m;
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    font-family: t.$font-primary;
+    font-size: 1.6rem;
+    min-height: 90%;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+    font-style: oblique;
+}
+
+h2 {
+    font-size: 4rem;
+    margin: 0;
+    font-style: oblique;
+}
+
+p {
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+.container {
+    @include m.desktop {
+    }
+}

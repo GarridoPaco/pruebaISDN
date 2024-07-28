@@ -1,0 +1,128 @@
+@use 'base/colors' as c;
+@use 'base/typography' as t;
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.container__flavours {
+
+    background: linear-gradient(to bottom, c.$pink, c.$lightPink);
+    padding: 5rem 2rem;
+    @include m.desktop {
+        padding: 5rem 15rem;
+    }
+
+    .container__flavours__header__superheadline {
+        font-size: 2.5rem;
+        margin: 2rem;
+        font-weight: 600;
+        color: c.$white;
+        text-align: right;
+    }
+
+    .container__flavours__header {
+        position: relative;
+
+        .container__flavours__header__bg {
+            position: absolute;
+            top: 0px;
+            right: 3px;
+            // z-index: -1;
+            margin: 0;
+            height: 10rem;
+            width: 60vw;
+            background: linear-gradient(to left, transparent 0%, transparent 100%),
+                linear-gradient(45deg, c.$white 12.5%, transparent 12.5%, transparent 50%, c.$white 50%, c.$white 62.5%, transparent 62.5%, transparent 100%);
+            background-size: 100% 100%, 10px 10px;
+        }
+
+        .container__flavours__header__headline {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 5rem;
+            color: c.$white;
+            margin: 2rem;
+            text-align: right;
+            @include m.desktop {
+                font-size: 10rem;
+            }
+
+            .container__flavours__header__headline--emphasis {
+                @include m.emphasis(c.$white);
+            }
+        }
+    }
+
+    .container__flavours__slider {
+        margin-top: 5rem;
+        display: flex;
+        gap: 3rem;
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        //scrollbar-width: none;
+        padding: 5rem 0;
+
+        @include m.desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .container__flavours__slider__card {
+            scroll-snap-align: center;
+            background-color: c.$white;
+            padding: 1rem;
+            border-radius: 1rem;
+            min-width: 100%;
+
+            @include m.desktop {
+                height: fit-content;
+            }
+
+            .container__flavours__slider__card__header {
+                display: flex;
+                align-items: center;
+
+                .container__flavours__slider__card__header__img {
+                    width: 4rem;
+                    aspect-ratio: 1/1;
+                    margin-right: 1rem;
+                }
+
+                .container__flavours__slider__card__header__headline {
+                    color: c.$darkBlue;
+                    text-transform: uppercase;
+                    letter-spacing: .5rem;
+                    font-weight: 600;
+                }
+            }
+
+            .container__flavours__slider__card__description {
+                color: c.$darkBlue;
+                font-weight: 400;
+            }
+
+            .container__flavours__slider__card__btn {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                background-color: c.$pink;
+                border: none;
+                padding: .5rem 1.5rem;
+                color: c.$white;
+                border-radius: 4rem;
+
+                .container__flavours__slider__card__btn__icon {
+                    width: 2rem;
+                    margin-left: 1rem;
+                }
+
+            }
+        }
+    }
+
+    .container__flavours__btn {
+        @include m.button (c.$pink);
+        //margin-top: 5rem;
+    }
+}

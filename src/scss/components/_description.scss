@@ -1,0 +1,118 @@
+@use 'base/colors' as c;
+@use 'base/typography' as t;
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.container__description {
+    padding: 10rem 0rem;
+    @include m.desktop {
+        padding: 10rem 15rem;
+    }
+
+    .container__description__header {
+        position: relative;
+
+        .container__description__header__bg {
+            position: absolute;
+            top: 0px;
+            left: 3px;
+            z-index: -1;
+            margin: 0;
+            height: 10rem;
+            width: 300px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255 , 255, 255, 1) 100%),
+                        linear-gradient(45deg, c.$pink 12.5%, transparent 12.5%, transparent 50%, c.$pink 50%, c.$pink 62.5%, transparent 62.5%, transparent 100%);
+            background-size: 100% 100%, 10px 10px;
+        }
+
+        .container__description__header__superheadline {
+            font-size: 2.5rem;
+            margin-left: 1rem;
+            font-weight: 600;
+            color: c.$darkBlue;
+            margin: 0;
+            padding: 1.5rem 2rem;
+        }
+
+        .container__description__header__headline {
+            font-size: 5rem;
+            font-style: normal;
+            color: c.$darkBlue;
+            margin-left: 2rem;
+            margin-bottom: 3rem;
+            @include m.desktop {
+                font-size: 12rem
+            }
+
+            .container__description__header__headline--emphasis {
+                @include m.emphasis(c.$pink);
+            }
+        }
+
+        .container__description__header__subheadline {
+            text-align: center;
+            color: c.$darkBlue;
+            font-weight: 600;
+            margin: 7rem 0;
+            
+        }
+    }
+
+    .container__description__article {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        @include m.desktop {
+            flex-direction: row;
+        }
+
+        .container__description__article__content {
+            flex:1;
+        }
+        .container__description__article__header {
+
+            .container__description__article__header__headline {
+                color: c.$darkBlue;
+                font-size: 3rem;
+                margin: 1rem 2rem;
+            }
+        }
+
+        .container__description__article__text {
+            color: c.$darkBlue;
+            margin: 0 2rem;
+            font-weight: 300;
+            @include m.desktop {
+                padding-right: 15rem;
+            }
+
+        }
+
+        .container__description__article__image {
+            border-radius: 1.5rem;
+            width: 90%;
+            margin-top: 3rem;
+            @include m.desktop {
+                width: 50%;
+            }
+        }
+
+        .container__description__article__bg {
+            width: 15rem;
+            height: 15rem;
+            background-color: c.$gray;
+            position: absolute;
+            z-index: -1;
+            top: 0px;
+            right: 0px;
+            @include m.desktop {
+                width: 50%;
+                height: 100%;
+                right: 40%;
+            }
+        }
+    }
+}

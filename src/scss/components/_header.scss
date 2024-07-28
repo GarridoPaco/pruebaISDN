@@ -1,0 +1,22 @@
+@use 'base/colors' as c;
+@use 'base/typography' as t;
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.header{
+    width: 100%;
+    height: 10vh;
+    background-color: c.$darkBlue;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+
+    .header__trademark {
+        @include m.logo(3rem);
+        @include m.desktop {
+            font-size: 4rem;
+        }
+    }
+
+}
